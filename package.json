@@ -15,5 +15,9 @@
     "ethereum-waffle": "^3.0.0",
     "ethers": "^5.0.0",
     "hardhat": "^2.9.9"
+  },
+  "scripts": {
+    "deploy-local": "hardhat run scripts/deploy.js",
+    "deploy-rinkeby": "hardhat run scripts/deploy.js --network rinkeby"
   }
 }

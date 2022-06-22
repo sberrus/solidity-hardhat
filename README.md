@@ -1,15 +1,14 @@
-# Basic Sample Hardhat Project
+# Freecodecamp - Hardhat
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+En este repositorio estará la explicación de:
 
-Try running some of the following tasks:
+-  Como configurar hardhat para que pueda compilar y realizar deploys en la red local o en redes que deseemos configurar.
+-  Que son los plugins.
+-  Como verificar contratos inteligentes en etherscan o en otras plataformas.
+-  Programar y crear scripts para los mismos.
+-  Manejo de errores comunes y como solventarlos.
+-  Trabajar con la consola y los scripts de hardhat.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+### Consejos
+
+-  Si a la hora de realizar un deploy a una mainnet hay un error al validar el contrato, principalmente en etherscan, BORRAR LAS CARPETAS "/artifacts" y "/cache".
