@@ -2,6 +2,8 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 require("./tasks/block-number");
+require("hardhat-gas-reporter");
+require("solidity-coverage");
 
 // ETHERSCAN
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
@@ -16,6 +18,9 @@ const RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
 
 // LOCALHOST ENVOIRMENT VARIABLES
 const LOCALHOST_RPC_URL = process.env.LOCALHOST_RPC_URL;
+
+// COINMARKETCAP_API_KEY
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 module.exports = {
 	defaultNetwork: "hardhat", // esta es la red local de hardhat. Esta configurada por defecto, pero se recomienda dejarla explicitada
@@ -43,5 +48,12 @@ module.exports = {
 	solidity: "0.8.4",
 	etherscan: {
 		apiKey: ETHERSCAN_API_KEY,
+	},
+	// Gas reporter es una extensión que usamos para obtener un dashboard informativo con el precio en gas y un aproximado de cuanto nos puede constar
+	// mandar un contrato a producción. Requiere que configuremos la siguiente propiedad en la config.
+	gasReporter: {
+		enabled: false, //toogle this to activate this tool
+		currency: "USD",
+		// coinmarketcap: COINMARKETCAP_API_KEY, //**problemas para obtener la API_KEY de coinmarketcap
 	},
 };
