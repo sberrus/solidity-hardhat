@@ -16,10 +16,9 @@ const RINKEBY_PRIVATE_KEY = process.env.RINKEBY_PRIVATE_KEY;
 
 // LOCALHOST ENVOIRMENT VARIABLES
 const LOCALHOST_RPC_URL = process.env.LOCALHOST_RPC_URL;
-const LOCALHOST_PRIVATE_KEY = process.env.LOCALHOST_PRIVATE_KEY;
 
 module.exports = {
-	defaultNetwork: "localhost", // esta es la red local de hardhat. Esta configurada por defecto, pero se recomienda dejarla explicitada
+	defaultNetwork: "hardhat", // esta es la red local de hardhat. Esta configurada por defecto, pero se recomienda dejarla explicitada
 	networks: {
 		rinkeby: {
 			// Estos 3 campos son requeridos para la configuración de redes secundarias u otras testnets
