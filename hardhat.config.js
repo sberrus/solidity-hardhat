@@ -23,7 +23,7 @@ const LOCALHOST_RPC_URL = process.env.LOCALHOST_RPC_URL;
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY;
 
 module.exports = {
-	defaultNetwork: "hardhat", // esta es la red local de hardhat. Esta configurada por defecto, pero se recomienda dejarla explicitada
+	defaultNetwork: "localhost", // esta es la red local de hardhat. Esta configurada por defecto, pero se recomienda dejarla explicitada
 	networks: {
 		rinkeby: {
 			// Estos 3 campos son requeridos para la configuración de redes secundarias u otras testnets
@@ -31,14 +31,17 @@ module.exports = {
 			accounts: [RINKEBY_PRIVATE_KEY],
 			chainId: 4,
 		},
-		// EN EL CASO DE GANACHE LA FORMA DE CONFIGURARLA ES LA SIGUIENTE.
-		// ganache: {
-		// 	url: GANACHE_RPC_URL,
-		// 	accounts: [GANACHE_PRIVATE_KEY],
-		// 	chainId: 1337,
-		// },
-		// PODEMOS USAR TANTO GANACHE COMO LA NODE DE HARDHAT EN LA CONSOLA, LA UNICA DIFERENCIA ES QUE EN LABORES DE DESARROLLO, ES MEJOR USAR
-		// LA RED LOCAL DE HARDHAT DEBIDO A QUE MANTIENE LA PRIVATE KEY Y NO TENEMOS QUE ANDAR ACTUALIZANDOLA CADA VEZ QUE REINICIEMOS EL NODO.
+		// Configurando Ganache u otro blockchain Provider
+		/*
+		 * ganache: {
+		 * 	url: GANACHE_RPC_URL,
+		 * 	accounts: [GANACHE_PRIVATE_KEY],
+		 * 	chainId: 1337,
+		 * },
+		 * PODEMOS USAR TANTO GANACHE COMO LA NODE DE HARDHAT EN LA CONSOLA, LA UNICA DIFERENCIA ES QUE EN LABORES DE DESARROLLO, ES MEJOR USAR
+		 * LA RED LOCAL DE HARDHAT DEBIDO A QUE MANTIENE LA PRIVATE KEY Y NO TENEMOS QUE ANDAR ACTUALIZANDOLA CADA VEZ QUE REINICIEMOS EL NODO.
+		 */
+		// Usando red proporcionada por "yarn|npm hardhat node"
 		localhost: {
 			url: LOCALHOST_RPC_URL,
 			// en el caso de hardhat no hay que declarar ninguna propiedad accounts ya que hardhat nos provee de esta información automáticamente.
